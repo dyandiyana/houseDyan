@@ -44,7 +44,7 @@ public class InsertDetailsServlet extends HttpServlet {
             //nk testing keluar masuk data pastikan xampp, heroku , database connected
 
             Class.forName("org.postgresql.Driver"); // ni stay
-            String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d2us57cbf117bh"; //ni url dri heroku database
+            String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
             String user = "nhydysucefvvzn"; //ni user dri heroku database
             String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
