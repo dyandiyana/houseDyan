@@ -90,7 +90,7 @@
                 <label for="female">FEMALE</label>
             </div>
         </div>
-        <button type="submit" class="button button1" name="submit" ><a href ="landlord-viewProfile.jsp">Submit</a></button><br><br>
+        <button type="submit" class="button button1" name="submit" >Submit</button><br><br>
     </div>
 </form>
 <body>
