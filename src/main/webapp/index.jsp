@@ -10,5 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="Test.jsp">Test</a>
+<a href="/ReadStudentServlet">Test</a>
 </body>
 </html>
