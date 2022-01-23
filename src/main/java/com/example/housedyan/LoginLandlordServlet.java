@@ -47,7 +47,7 @@ public class LoginLandlordServlet extends HttpServlet {
 
                 while (res.next()){
 
-                    if(lUsername.equals(sql)&&lPassword.equals(sql)) {
+                    if(lUsername.equals(res) && lPassword.equals(res)) {
                         out.println("<p>" + "Email: " + res.getString("landlordemail") + "</p>");
 
                     }
