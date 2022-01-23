@@ -51,6 +51,9 @@ public class LoginLandlordServlet extends HttpServlet {
                         //out.println("<p>" + "Email: "+ res.getString("landlordemail") + "</p>");
                         response.sendRedirect("tenant-homepage.jsp");
                     }
+                    else{
+                        out.println("Wrong!!!");
+                    }
                 }
             }
 
