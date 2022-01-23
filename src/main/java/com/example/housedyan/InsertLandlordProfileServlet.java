@@ -39,10 +39,6 @@ public class InsertLandlordProfileServlet extends HttpServlet {
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
-            String sdID1   = request.getParameter("stuid");
-            String sdhMP   = request.getParameter("stuname");
-            String SdEmail = request.getParameter("email");
-            String PhoneNum = request.getParameter ("phonenum");
 
             String lId = request.getParameter("landlordId");
             String lUsername = request.getParameter("landlordUsername");
@@ -50,7 +46,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
             String lName = request.getParameter("landlordName");
             String lEmail = request.getParameter("landlordEmail");
             String lAge = request.getParameter("landlordAge");
-            String lPhoneNo = request.getParameter("landordPhoneNo");
+            String lPhoneNo = request.getParameter("landlordPhoneNo");
             String lGender = request.getParameter("landlordGender");
 
             //nk testing keluar masuk data pastikan xampp, heroku , database connected
