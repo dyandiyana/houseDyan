@@ -10,6 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="Test.jsp">Test</a>
-<a href="try.jsp">Try sadt</a>
+<a href="try.jsp">Try s;adt</a>
 </body>
 </html>
