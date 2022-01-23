@@ -28,7 +28,7 @@ public class ReadLandlordProfileServlet extends HttpServlet {
         String lGender = (String) session.getAttribute("landlordGender");
 
         //masukkan value ke dlm java class StudentDetails
-        ReadAccount readAccount= new ReadAccount (lId,lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
+        CreateAccount readAccount= new CreateAccount(lId,lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
     }
 
     @Override
