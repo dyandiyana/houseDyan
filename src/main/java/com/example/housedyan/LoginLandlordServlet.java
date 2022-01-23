@@ -27,10 +27,6 @@ public class LoginLandlordServlet extends HttpServlet {
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
 
-            if(lUsername.equals(lUsername)&&lPassword.equals(lPassword))
-            {
-                response.sendRedirect("tenant-homepage.jsp");
-            }
             Class.forName("org.postgresql.Driver"); // ni stay
             String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
             String user = "nhydysucefvvzn"; //ni user dri heroku database
