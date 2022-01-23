@@ -27,7 +27,7 @@
       <label>USERNAME</label>
     </div>
     <div class="col-75">
-      <label>ZaitulFarhana00</label>
+      <label></label>
     </div>
   </div>
   <div class="row">
@@ -35,7 +35,7 @@
       <label>PASSWORD</label>
     </div>
     <div class="col-75">
-      <label>Zaitul_0011</label>
+      <label></label>
     </div>
   </div>
 
@@ -44,7 +44,7 @@
       <label>FULL NAME</label>
     </div>
     <div class="col-75">
-      <label>Zaitul Farhana Md Esa</label>
+      <label></label>
     </div>
   </div>
 
@@ -53,7 +53,7 @@
       <label>EMAIL</label>
     </div>
     <div class="col-75">
-      <label>z.farhana21@gmail.com</label>
+      <label>/label>
     </div>
   </div>
 
@@ -62,7 +62,7 @@
       <label>GENDER</label>
     </div>
     <div class="col-75">
-      <label>FEMALE</label>
+      <label></label>
     </div>
   </div>
 
@@ -71,7 +71,7 @@
       <label>AGE</label>
     </div>
     <div class="col-75">
-      <label>38</label>
+      <label></label>
     </div>
   </div>
 
@@ -80,7 +80,7 @@
       <label>PHONE NUMBER</label>
     </div>
     <div class="col-75">
-      <label>0103211234</label>
+      <label></label>
     </div>
   </div>
 
