@@ -63,8 +63,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement st;
-            String query="insert into landlord(landlordId,landlordUsername,landlordPassword,landlordName,landlordEmail,landlordAge,landlordPhoneNo,landlordGender)" +
-                         " values(?,?,?,?,?,?,?,?)";
+            String query="insert into landlord(landlorid,landlordusername,landlordpassword,landlordname,landlordemail,landlordage,landlordphoneno,landlordgender) values(?,?,?,?,?,?,?,?)";
 
             st = conn.prepareStatement(query);
             st.setString(1,lId); //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
