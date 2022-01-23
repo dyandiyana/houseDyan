@@ -84,9 +84,9 @@
                 <label style="">GENDER</label>
             </div>
             <div class="col-75">
-                <input type="radio" id="male" name="landlordGender" placeholder="Male" value="">
+                <input type="radio" id="male" name="landlordGender" placeholder="Male" value="Male">
                 <label for="male">MALE</label><br>
-                <input type="radio" id="female" name="landlordGender" placeholder="Female" value="">
+                <input type="radio" id="female" name="landlordGender" placeholder="Female" value="Female">
                 <label for="female">FEMALE</label>
             </div>
         </div>
