@@ -9,9 +9,8 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
-<a href="InsertDetails.jsp">Test</a>
-<a href="/ReadStudentServlet">Read Studentt</a>
-<a href="try.jsp">Tryy</a>
-
+<a href="Test.jsp">Test</a>
+<a href="/ReadStudentServlet">Test</a>
+<a href="landlord-createProfile.jsp">CREATE PROFILEE</a>
 </body>
 </html>
