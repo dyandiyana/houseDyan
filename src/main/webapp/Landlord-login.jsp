@@ -19,7 +19,7 @@
 <div class="header">
     <p>UiTM JASIN NON-RESIDENT HOUSE RENTAL SYSTEM</p>
 </div>
-<form action="" method="POST">
+<form action="/LoginLandlordServlet" method="POST">
     <div class="container">
         <h2>LANDLORD LOGIN</h2>
         <div class="row">
@@ -27,7 +27,7 @@
                 <label style="">Username</label>
             </div>
             <div class="col-75">
-                <input type="text" name="username" placeholder="Enter your username" value="">
+                <input type="text" name="landlordUsername" placeholder="Enter your username" value="">
             </div></div>
         <div class="row">
             <div class="col-25">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <p>Don't have an account?</p>
-        <button type="submit" class="button button1" name="submit" ><a href ="landlord-home.jsp">Login</a></button>
+        <button type="submit" class="button button1" name="submit" >Login</button>
 
         <button type="submit" class="button2 button1 " name="submit" ><a href ="landlord-createProfile.jsp">Sign up</a></button><br><br>
 
