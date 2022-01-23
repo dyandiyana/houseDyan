@@ -18,7 +18,7 @@ public class ReadLandlordProfileServlet extends HttpServlet {
         HttpSession session = request.getSession(); // if nk wujudkan session mcm sir buat
 
         // tarik value dri form dalam jsp lalu kot javascript bawah tu
-        String lId = (String) session.getAttribute("landlordId");
+
         String lUsername = (String) session.getAttribute("landlordUsername");
         String lPassword = (String) session.getAttribute("landlordPassword");
         String lName = (String) session.getAttribute("landlordName");
@@ -28,7 +28,7 @@ public class ReadLandlordProfileServlet extends HttpServlet {
         String lGender = (String) session.getAttribute("landlordGender");
 
         //masukkan value ke dlm java class StudentDetails
-        CreateAccount readAccount= new CreateAccount(lId,lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
+        CreateAccount readAccount= new CreateAccount(lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
     }
 
     @Override

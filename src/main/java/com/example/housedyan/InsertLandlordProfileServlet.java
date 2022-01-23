@@ -17,7 +17,6 @@ public class InsertLandlordProfileServlet extends HttpServlet {
         HttpSession session = request.getSession(); // if nk wujudkan session mcm sir buat
 
         // tarik value dri form dalam jsp lalu kot javascript bawah tu
-        String lId = (String) session.getAttribute("landlordId");
         String lUsername = (String) session.getAttribute("landlordUsername");
         String lPassword = (String) session.getAttribute("landlordPassword");
         String lName = (String) session.getAttribute("landlordName");
@@ -27,7 +26,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
         String lGender = (String) session.getAttribute("landlordGender");
 
         //masukkan value ke dlm java class StudentDetails
-        CreateAccount createAccount = new CreateAccount(lId,lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
+        CreateAccount createAccount = new CreateAccount(lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
 
     }
 
@@ -40,7 +39,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
 
-            String lId = request.getParameter("landlordId");
+
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
             String lName = request.getParameter("landlordName");
@@ -59,17 +58,17 @@ public class InsertLandlordProfileServlet extends HttpServlet {
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement st;
-            String query="insert into landlord(landlordid,landlordusername,landlordpassword,landlordname,landlordemail,landlordage,landlordphoneno,landlordgender) values(?,?,?,?,?,?,?,?)";
+            String query="insert into landlord(landlordusername,landlordpassword,landlordname,landlordemail,landlordage,landlordphoneno,landlordgender) values(?,?,?,?,?,?,?)";
 
             st = conn.prepareStatement(query);
-            st.setString(1,lId); //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
-            st.setString(2,lUsername);
-            st.setString(3,lPassword);
-            st.setString(4,lName);
-            st.setString(5,lEmail);
-            st.setString(6,lAge);
-            st.setString(7,lPhoneNo);
-            st.setString(8,lGender);
+            //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
+            st.setString(1,lUsername);
+            st.setString(2,lPassword);
+            st.setString(3,lName);
+            st.setString(4,lEmail);
+            st.setString(5,lAge);
+            st.setString(6,lPhoneNo);
+            st.setString(7,lGender);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
