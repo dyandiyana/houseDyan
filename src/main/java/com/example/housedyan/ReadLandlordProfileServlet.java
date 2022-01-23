@@ -49,7 +49,6 @@ public class ReadLandlordProfileServlet extends HttpServlet {
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement preparedStatement = conn.prepareStatement(query);
-            preparedStatement.setString(1,sdID1);
             System.out.println(preparedStatement);
 
             ResultSet rs = preparedStatement.executeQuery();
