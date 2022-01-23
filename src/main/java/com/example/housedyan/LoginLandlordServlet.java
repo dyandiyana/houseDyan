@@ -48,8 +48,8 @@ public class LoginLandlordServlet extends HttpServlet {
                 while (res.next()){
 
                     if(lUsername.equals(sql)&&lPassword.equals(sql)) {
-                        //out.println("<p>" + "Email: "+ res.getString("landlordemail") + "</p>");
-                        response.sendRedirect("tenant-homepage.jsp");
+                        out.println("<p>" + "Email: "+ res.getString("landlordemail") + "</p>");
+
                     }
                     else{
                         out.println("Wrong!!!");
