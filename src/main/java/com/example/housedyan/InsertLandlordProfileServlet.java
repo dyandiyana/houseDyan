@@ -73,6 +73,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
 
             if(row>0){
                 out.println("Record insertedd");
+                response.sendRedirect("landlord-login.jsp");
             }else{
                 out.println("Record failed");
             }
