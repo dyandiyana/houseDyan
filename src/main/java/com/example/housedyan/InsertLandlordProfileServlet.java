@@ -78,7 +78,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
-                out.println("Record inserted");
+                out.println("Record insertedd");
             }else{
                 out.println("Record failed");
             }

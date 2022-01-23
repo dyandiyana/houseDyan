@@ -11,6 +11,10 @@ public class CreateAccount {
     public String landlordPhoneNo;
     public String landlordGender;
 
+    public CreateAccount(){
+
+    }
+
     public CreateAccount(String landlordid, String landlordUsername, String landlordPassword, String landlordName, String landlordEmail, String landlordAge, String landlordPhoneNo, String landlordGender) {
         this.landlordid = landlordid;
         this.landlordUsername = landlordUsername;
@@ -85,4 +89,5 @@ public class CreateAccount {
     public void setLandlordGender(String landlordGender) {
         this.landlordGender = landlordGender;
     }
+
 }

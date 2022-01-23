@@ -11,6 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="Test.jsp">Test</a>
 <a href="/ReadStudentServlet">Test</a>
-<a href="landlord-createProfile.jsp">CREATE PROFILE</a>
+<a href="landlord-createProfile.jsp">CREATE PROFILEE</a>
 </body>
 </html>
