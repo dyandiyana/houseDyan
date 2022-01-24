@@ -16,9 +16,9 @@
 <body>
 
 <%--WELCOME !!!!!! <%=landlordusername%>--%>
-WELCOME !!!!! ${landlordusername}
+WELCOME !!!!! ${landlordusername}<br><br>
 <a href="landlord-updateProfile.jsp">update profile</a>
-<a href="shah.jsp">syah update profile</a>
+<a href="landlord-viewProfile.jsp">read profile</a>
 
 </body>
 </html>
