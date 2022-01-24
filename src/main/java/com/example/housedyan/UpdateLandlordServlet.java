@@ -24,6 +24,7 @@ public class UpdateLandlordServlet extends HttpServlet {
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
+            Integer lId = Integer.parseInt(request.getParameter("landlordid"));
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
             String lName = request.getParameter("landlordName");
@@ -46,13 +47,14 @@ public class UpdateLandlordServlet extends HttpServlet {
 
             st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
-            st.setString(1,lUsername);
-            st.setString(2,lPassword);
-            st.setString(3,lName);
-            st.setString(4,lEmail);
-            st.setString(5,lAge);
-            st.setString(6,lPhoneNo);
-            st.setString(7,lGender);
+            st.setString(1, String.valueOf(lId));
+            st.setString(2,lUsername);
+            st.setString(3,lPassword);
+            st.setString(4,lName);
+            st.setString(5,lEmail);
+            st.setString(6,lAge);
+            st.setString(7,lPhoneNo);
+            st.setString(8,lGender);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
