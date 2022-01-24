@@ -11,6 +11,7 @@
     <%@include file="landlord-navbar.html"%>
 </head>
 <body>
+<a href="landlord-updateProfile.jsp">update profile</a>
 
 </body>
 </html>
