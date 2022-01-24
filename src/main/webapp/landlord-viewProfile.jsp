@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<form action="com.example.housedyan.DeleteServlet" method="post">
+<form action="" method="post">
 
         <div class="container">
           <h3>MY PROFILE</h3>
