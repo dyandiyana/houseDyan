@@ -60,15 +60,15 @@
                     String DB_USER = "nhydysucefvvzn";
                     String DB_PASSWORD = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078";
 
-                    Connection conn = null;
-                    Statement stat = null;
-                    ResultSet res = null;
+
+
+
                     Class.forName(DB_DRIVER);
-                    conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
-                    stat = conn.createStatement();
+                    Connection conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+                    Statement stat = conn.createStatement();
                     String u = request.getParameter("landlordid");
                     String data = "select * from landlord where landlordid ='"+u+"'";
-                    res = stat.executeQuery(data);
+                    ResultSet res = stat.executeQuery(data);
                     while(res.next()){
                 %>
                 <tr>
