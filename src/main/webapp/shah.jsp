@@ -9,23 +9,15 @@
 
 <html>
     <head>
-        <title>4Wheel Car Rental</title>
-
-
-    <body style="background-color:black;">
-    </body>
-
-
+        <title>HOUSE RENTAL SYSTEM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="landlord-viewProfile.css">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     </head>
 
 <body>
-        <header>
-            <nav>
-                <div>
-                </div>
-            </nav>
-        </header>
-    <br>
+
+
 
     <div class="row">
         <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
@@ -66,7 +58,7 @@
                     Class.forName(DB_DRIVER);
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
-                    String data = "select * from landlord order by landlordid";
+                    String data = "select * from landlord where landlordid=?";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
