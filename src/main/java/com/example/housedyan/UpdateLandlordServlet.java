@@ -9,24 +9,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-@WebServlet(name = "InsertLandlordProfileServlet", value = "/InsertLandlordProfileServlet")
-public class InsertLandlordProfileServlet extends HttpServlet {
+@WebServlet(name = "UpdateLandlordServlet", value = "/UpdateLandlordServlet")
+public class UpdateLandlordServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        HttpSession session = request.getSession(); // if nk wujudkan session mcm sir buat
-
-        // tarik value dri form dalam jsp lalu kot javascript bawah tu
-        String lUsername = (String) session.getAttribute("landlordUsername");
-        String lPassword = (String) session.getAttribute("landlordPassword");
-        String lName = (String) session.getAttribute("landlordName");
-        String lEmail = (String) session.getAttribute("landlordEmail");
-        String lAge = (String) session.getAttribute("landlordAge");
-        String lPhoneNo = (String) session.getAttribute("landordPhoneNo");
-        String lGender = (String) session.getAttribute("landlordGender");
-
-        //masukkan value ke dlm java class StudentDetails
-        //CreateAccount createAccount = new CreateAccount(lUsername,lPassword,lName,lEmail,lAge,lPhoneNo,lGender);
 
     }
 
@@ -56,7 +42,7 @@ public class InsertLandlordProfileServlet extends HttpServlet {
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement st;
-            String query="insert into landlord(landlordusername,landlordpassword,landlordname,landlordemail,landlordage,landlordphoneno,landlordgender) values(?,?,?,?,?,?,?)";
+            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=landlordusername)";
 
             st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu

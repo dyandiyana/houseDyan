@@ -3,6 +3,7 @@ package com.example.housedyan;
 public class CreateAccount {
 
 
+    public Integer landlordId;
     public String landlordUsername;
     public String landlordPassword;
     public String landlordName;
@@ -15,8 +16,8 @@ public class CreateAccount {
 
     }
 
-    public CreateAccount( String landlordUsername, String landlordPassword, String landlordName, String landlordEmail, String landlordAge, String landlordPhoneNo, String landlordGender) {
-
+    public CreateAccount(Integer landlordId, String landlordUsername, String landlordPassword, String landlordName, String landlordEmail, String landlordAge, String landlordPhoneNo, String landlordGender) {
+        this.landlordId = landlordId;
         this.landlordUsername = landlordUsername;
         this.landlordPassword = landlordPassword;
         this.landlordName = landlordName;
@@ -26,7 +27,13 @@ public class CreateAccount {
         this.landlordGender = landlordGender;
     }
 
+    public Integer getLandlordId() {
+        return landlordId;
+    }
 
+    public void setLandlordId(Integer landlordId) {
+        this.landlordId = landlordId;
+    }
 
     public String getLandlordUsername() {
         return landlordUsername;

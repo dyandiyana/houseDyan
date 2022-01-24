@@ -13,7 +13,7 @@
 <a href="/ReadStudentServlet">Test</a>
 <a href="landlord-createProfile.jsp">CREATE PROFILEE</a>
 <a href="landlord-login.jsp">LOGIN PROFILEE</a>
-<a href="landlord-viewProfile.jsp">READ PROFILEE</a>
+<a href="/ReadLandlordProfileServlet">READ PROFILEE</a>
 
 <br>
 <a href="shah.jsp">tesh shah punya</a>
