@@ -58,7 +58,7 @@
                     Class.forName(DB_DRIVER);
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
-                    String data = "select * from landlord where landlordid=?";
+                    String data = "select * from landlord where order by landlordid";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
@@ -74,7 +74,7 @@
 
 
                     <td class="text-center">
-                        <a href='Edit.jsp?u=<%=res.getString("landlordid")%>' class="btn btn-success">Updatee</a>
+                        <a href='Edit.jsp?u=<%=res.getString("landlordid")%>' class="btn btn-success">Update</a>
                         <a href='Delete.jsp?d=<%=res.getString("landlordid")%>' class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
