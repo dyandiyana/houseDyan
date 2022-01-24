@@ -20,17 +20,21 @@ public class UpdateLandlordServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+        int lId= Integer.parseInt(request.getParameter("landlordid"));
+        String lUsername = request.getParameter("landlordUsername");
+        String lPassword = request.getParameter("landlordPassword");
+        String lName = request.getParameter("landlordName");
+        String lEmail = request.getParameter("landlordEmail");
+        String lAge = request.getParameter("landlordAge");
+        String lPhoneNo = request.getParameter("landlordPhoneNo");
+        String lGender = request.getParameter("landlordGender");
+        CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
+
+        int row = 0;
+
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
-            int lId= Integer.parseInt(request.getParameter("landlordid"));
-            String lUsername = request.getParameter("landlordUsername");
-            String lPassword = request.getParameter("landlordPassword");
-            String lName = request.getParameter("landlordName");
-            String lEmail = request.getParameter("landlordEmail");
-            String lAge = request.getParameter("landlordAge");
-            String lPhoneNo = request.getParameter("landlordPhoneNo");
-            String lGender = request.getParameter("landlordGender");
-            CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
+
 
             //nk testing keluar masuk data pastikan xampp, heroku , database connected
 
@@ -58,26 +62,29 @@ public class UpdateLandlordServlet extends HttpServlet {
             st.setString(6,landlord.getLandlordPhoneNo());
             st.setString(7,landlord.getLandlordGender());
             st.setInt(8,landlord.getLandlordId());
-            int row= st.executeUpdate();//return no of row effected
+            row= st.executeUpdate();//return no of row effected
 
-            if(row>0){
-                out.println("Record update insertedd");
 
-                request.setAttribute("id", landlord.getLandlordId() );
-                request.setAttribute("username", landlord.getLandlordUsername() );
-                request.setAttribute("password", landlord.getLandlordPassword() );
-                request.setAttribute("name", landlord.getLandlordName() );
-                request.setAttribute("email", landlord.getLandlordEmail() );
-                request.setAttribute("age", landlord.getLandlordAge() );
-                request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
-                request.setAttribute("gender", landlord.getLandlordGender() );
-                response.sendRedirect("landlord-viewProfile.jsp");
-            }else{
-                out.println("Record failed");
-            }
 
         }catch(Exception e){
             e.printStackTrace();
         }
+
+        if(row>0){
+            out.println("Record update insertedd");
+
+            request.setAttribute("id", landlord.getLandlordId() );
+            request.setAttribute("username", landlord.getLandlordUsername() );
+            request.setAttribute("password", landlord.getLandlordPassword() );
+            request.setAttribute("name", landlord.getLandlordName() );
+            request.setAttribute("email", landlord.getLandlordEmail() );
+            request.setAttribute("age", landlord.getLandlordAge() );
+            request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
+            request.setAttribute("gender", landlord.getLandlordGender() );
+            response.sendRedirect("landlord-viewProfile.jsp");
+        }else{
+            out.println("Record failed");
+        }
+
     }
 }
