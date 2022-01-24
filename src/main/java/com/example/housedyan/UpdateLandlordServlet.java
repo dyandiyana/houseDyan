@@ -39,22 +39,26 @@ public class UpdateLandlordServlet extends HttpServlet {
             String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
             String user = "nhydysucefvvzn"; //ni user dri heroku database
             String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
+
+
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement st;
-            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid='"+lId+"'";
+            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=?";
+
 
             st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
-            st.setInt(1,lId);
-            st.setString(2,lUsername);
-            st.setString(3,lPassword);
-            st.setString(4,lName);
-            st.setString(5,lEmail);
-            st.setString(6,lAge);
-            st.setString(7,lPhoneNo);
-            st.setString(8,lGender);
+
+            st.setString(1,lUsername);
+            st.setString(2,lPassword);
+            st.setString(3,lName);
+            st.setString(4,lEmail);
+            st.setString(5,lAge);
+            st.setString(6,lPhoneNo);
+            st.setString(7,lGender);
+            st.setInt(8,lId);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
