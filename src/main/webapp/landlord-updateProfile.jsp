@@ -29,10 +29,18 @@
         <h2>UPDATE MY ACCOUNT</h2>
         <div class="row">
             <div class="col-25">
+                <label style=""></label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="landlordid"  value="${landlordid}" hidden>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
                 <label style="">USERNAME</label>
             </div>
             <div class="col-75">
-                <input type="text" name="Username" placeholder="Enter your username" value="${landlordusername}">
+                <input type="text" name="landlordusername"  value="${landlordusername}">
             </div>
         </div>
         <div class="row">
@@ -40,7 +48,7 @@
                 <label>PASSWORD</label>
             </div>
             <div class="col-75">
-                <input type="password" name="password" placeholder="Enter your password" value="${landlordpassword}">
+                <input type="password" name="landlordpassword"  value="${landlordpassword}">
             </div>
         </div>
         <div class="row">
@@ -48,7 +56,7 @@
                 <label style="">FULL NAME</label>
             </div>
             <div class="col-75">
-                <input type="text" name="FullName" placeholder="Enter your full name" value="${landlordname}">
+                <input type="text" name="landlordname"  value="${landlordname}">
             </div>
         </div>
         <div class="row">
@@ -56,7 +64,7 @@
                 <label>EMAIL</label>
             </div>
             <div class="col-75">
-                <input type="text" name="email" placeholder="Enter your email" value="${landlordemail}">
+                <input type="text" name="landlordemail"  value="${landlordemail}">
             </div>
         </div>
 
@@ -65,7 +73,7 @@
                 <label style="">AGE</label>
             </div>
             <div class="col-75">
-                <input type="text" name="age" placeholder="Enter your age" value="${landlordage}">
+                <input type="text" name="landlordage" value="${landlordage}">
             </div>
         </div>
         <div class="row">
@@ -73,7 +81,7 @@
                 <label style="">PHONE NUMBER</label>
             </div>
             <div class="col-75">
-                <input type="text" name="PhoneNumber" placeholder="Enter your phone number" value="${landlordphoneno}">
+                <input type="text" name="landlordPhoneNo"  value="${landlordphoneno}">
             </div>
         </div>
         <div class="row">
@@ -81,9 +89,9 @@
                 <label style="">GENDER</label>
             </div>
             <div class="col-75">
-                <input type="radio" id="male" name="Gender" placeholder="Male" value="${landlordgender}">
+                <input type="radio" id="male" name="landlordgender" placeholder="Male" value="${landlordgender}">
                 <label for="male">MALE</label><br>
-                <input type="radio" id="female" name="Gender" placeholder="Female" value="${landlordgender}">
+                <input type="radio" id="female" name="landlordgender" placeholder="Female" value="${landlordgender}">
                 <label for="female">FEMALE</label>
             </div>
         </div>

@@ -44,11 +44,9 @@ public class UpdateLandlordServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
             // klau buat postgress atas2 ni amik yg details dri heroku
 
-            PreparedStatement st;
             String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=?";
 
-
-            st = conn.prepareStatement(query);
+            PreparedStatement st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
 
             st.setString(1,lUsername);
