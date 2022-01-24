@@ -43,7 +43,7 @@ public class UpdateLandlordServlet extends HttpServlet {
             // klau buat postgress atas2 ni amik yg details dri heroku
 
             PreparedStatement st;
-            String query="UPDATE landlord set landlordid=?,landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=?";
+            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid='"+lId+"'";
 
             st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
