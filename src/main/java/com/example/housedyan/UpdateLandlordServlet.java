@@ -24,7 +24,7 @@ public class UpdateLandlordServlet extends HttpServlet {
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
-            Integer lId = Integer.parseInt(request.getParameter("landlordid"));
+            Integer lId = Integer.valueOf(request.getParameter("landlordid"));
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
             String lName = request.getParameter("landlordName");
