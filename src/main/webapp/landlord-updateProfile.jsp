@@ -33,22 +33,18 @@
     String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
     String user = "nhydysucefvvzn"; //ni user dri heroku database
     String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
-    Connection conn = null;
 
-    Statement stat = null;
-    ResultSet res = null;
-    PreparedStatement stmt = null;
 
-    conn = DriverManager.getConnection(dbURL, user, pass);
+    Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
 %>
 
 <form action="" method="POST">
     <%
-        stat = conn.createStatement();
+        Statement stat = conn.createStatement();
         int lId = Integer.parseInt(request.getParameter("landlordid"));
         String data = "select * from landlord where landlordid='"+lId+"'";
-        res = stat.executeQuery(data);
+        ResultSet res = stat.executeQuery(data);
         while(res.next()){
     %>
     <div class="container">
@@ -122,7 +118,7 @@
 </body>
 </html>
 <%
-    Integer landID = Integer.parseInt(request.getParameter("landlordid"));
+    int landID = Integer.parseInt(request.getParameter("landlordid"));
     String a = request.getParameter("landlordusername");
     String b = request.getParameter("landlordpassword");
     String c = request.getParameter("landlordname");
@@ -132,7 +128,7 @@
     String g = request.getParameter("landlordgender");
     if(a!=null && b!=null && c!=null && d!=null && e!=null && f!=null && g!=null){
         String query = "update landlord set landlordusername=?,landlordpassword=?,landlordname=?, landlordemail=?, landlordage=? , landlordphoneno=?,landlordgender=? where landlordid='"+landID+"'";
-        stmt = conn.prepareStatement(query);
+        PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setString(1,a);
         stmt.setString(2,b);
         stmt.setString(3,c);
