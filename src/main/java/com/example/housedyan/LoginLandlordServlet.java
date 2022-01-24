@@ -49,7 +49,7 @@ public class LoginLandlordServlet extends HttpServlet {
                     if(lUsername.equals(res.getString("landlordusername"))&&lPassword.equals(res.getString("landlordpassword")))
                     {
                         out.println("BERJAYA!!!");
-                        //response.sendRedirect("tenant-homepage.jsp");
+                        response.sendRedirect("tenant-homepage.jsp");
 
                     }
                 }
