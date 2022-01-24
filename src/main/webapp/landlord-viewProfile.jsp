@@ -16,6 +16,8 @@
 </head>
 
 <body>
+<jsp:include page="/ReadLandlordProfileServlet"/>
+
 <div class="navbar">
 </div>
 
@@ -89,7 +91,6 @@
 
 
 </div
-<jsp:include page="/ReadLandlordProfileServlet"/>
 
 </body>
 </html>
