@@ -26,7 +26,7 @@
       <label>USERNAME</label>
     </div>
     <div class="col-75">
-      <label>name="landlordid"</label>
+      <label>name="landlordusername"</label>
     </div>
   </div>
   <div class="row">
