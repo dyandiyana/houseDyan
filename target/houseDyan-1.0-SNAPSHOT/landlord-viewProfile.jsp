@@ -3,7 +3,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.DriverManager" %><%--
   Created by IntelliJ IDEA.
-  User: anis
+  User: wala wala
   Date: 1/2/2022
   Time: 4:51 AM
   To change this template use File | Settings | File Templates.
@@ -19,13 +19,9 @@
 </head>
 
 <body>
-<form action="" method="post">
 
         <div class="container">
           <h3>MY PROFILE</h3>
-
-          <input type="number" name="landlordid" hidden>
-
           <div class="row">
             <div class="col-25">
               <label>USERNAME</label>
@@ -81,11 +77,11 @@
                 </div>
             </div>
 
-          <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="shah.jsp">DELETE</a></button>
           <button type="submit" onclick="myFunction(); return false" class="button button1" name="submit" ><a href="landlord-updateProfile.jsp">UPDATE</a></button>
+          <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="landlord-deleteProfile.jsp">DELETE</a></button>
 
 
         </div>
-</form>
+
 </body>
 </html>

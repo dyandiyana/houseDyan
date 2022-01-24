@@ -2,7 +2,6 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.*"%>
-<%@ page import="java.io.PrintWriter" %>
 
 <html>
     <head>
@@ -11,8 +10,6 @@
     </head>
 
     <body>
-
-
     <%
         String landlordid = request.getParameter("landlordid");
         System.out.println(landlordid);
@@ -29,13 +26,13 @@
             String sql = "delete from landlord where landlordid=" + landlordid;
             stmt.execute(sql);
 
-            out.println("Your Requested Data Is Deleted");
+            System.out.println("Your Requested Data Is Deleted");
             conn.close();
         }
 
         catch (Exception e)
         {
-            out.println("Error: " + e.toString());
+            System.out.println("Error: " + e.toString());
 
         }
 
