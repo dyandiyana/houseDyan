@@ -62,7 +62,7 @@ public class UpdateLandlordServlet extends HttpServlet {
 
             if(row>0){
                 out.println("Record update insertedd");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("landlord-viewProfile.jsp");
+
                 request.setAttribute("id", landlord.getLandlordId() );
                 request.setAttribute("username", landlord.getLandlordUsername() );
                 request.setAttribute("password", landlord.getLandlordPassword() );
@@ -71,7 +71,7 @@ public class UpdateLandlordServlet extends HttpServlet {
                 request.setAttribute("age", landlord.getLandlordAge() );
                 request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
                 request.setAttribute("gender", landlord.getLandlordGender() );
-                dispatcher.forward(request, response);
+                response.sendRedirect("landlord-viewProfile.jsp");
             }else{
                 out.println("Record failed");
             }
