@@ -14,8 +14,8 @@
 
 
     <%
-        String username = request.getParameter("landlordusername");
-        System.out.println(username);
+        String landlordusername = request.getParameter("landlordusername");
+        System.out.println(landlordusername);
 
         try
         {
@@ -26,7 +26,7 @@
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             Statement stmt = conn.createStatement();
-            String sql = "delete from landlord where landlordusername=" + username;
+            String sql = "delete from landlord where landlordusername=" + landlordusername;
             stmt.execute(sql);
 
             out.println("Your Requested Data Is Deleted");
