@@ -14,7 +14,6 @@
 <a href="landlord-createProfile.jsp">CREATE PROFILEE</a>
 <a href="landlord-login.jsp">LOGIN PROFILEE</a>
 <a href="/ReadLandlordProfileServlet">READ PROFILEE</a>
-<a href="/landlord-deleteProfile.jsp">DELETE PROFILEE</a>
 
 
 <br>
