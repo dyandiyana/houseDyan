@@ -67,7 +67,7 @@ public class ReadLandlordProfileServlet extends HttpServlet
 
                 while (rs.next())
                 {
-                    System.out.print("Landlord Id: " + rs.getString("landlordid"));
+                    System.out.print("Landlord Idd: " + rs.getString("landlordid"));
                     System.out.print("Username: " + rs.getString("landlordusername"));
                     System.out.print("landlord password :" + rs.getString("landlordpassword"));
                     System.out.print("landlord name: " + rs.getString("landlordname"));
