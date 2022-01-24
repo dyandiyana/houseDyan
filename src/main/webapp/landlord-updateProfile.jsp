@@ -43,7 +43,7 @@
 
 %>
 
-<form action="/UpdateLandlordServlet" method="POST">
+<form action="" method="POST">
     <%
         stat = conn.createStatement();
         Integer lId = Integer.parseInt(request.getParameter("landlordid"));
