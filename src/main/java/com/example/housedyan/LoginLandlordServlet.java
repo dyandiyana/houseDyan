@@ -50,8 +50,7 @@ public class LoginLandlordServlet extends HttpServlet {
                     {
                         out.println("BERJAYA!!!");
                         //response.sendRedirect("tenant-homepage.jsp");
-                    }else{
-                        out.println("PADAN MUKA");
+
                     }
                 }
             }
