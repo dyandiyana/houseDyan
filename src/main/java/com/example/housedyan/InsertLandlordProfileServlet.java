@@ -38,8 +38,6 @@ public class InsertLandlordProfileServlet extends HttpServlet {
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
-
-
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
             String lName = request.getParameter("landlordName");
