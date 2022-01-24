@@ -34,17 +34,17 @@
             String data = "select * from landlord order by landlordid";
             rs = stat.executeQuery(data);
 
-      while (rs.next())
-           <%
-              System.out.print("Landlord Id2: " + rs.getString("landlordid"));
-              System.out.print("Username: " + rs.getString("landlordusername"));
-              System.out.print("landlord password :" + rs.getString("landlordpassword"));
-              System.out.print("landlord name: " + rs.getString("landlordname"));
-              System.out.print("landlord email: " + rs.getString("landlordemail"));
-              System.out.print("landlord age: " + rs.getString("landlordage"));
-              System.out.print("landlord phone: " + rs.getString("landlordphoneno"));
-              System.out.print("landlord gender: " + rs.getString("landlordgender"));
-          %>
+      while (rs.next()) {
+          System.out.print("Landlord Id2: " + rs.getString("landlordid"));
+          System.out.print("Username: " + rs.getString("landlordusername"));
+          System.out.print("landlord password :" + rs.getString("landlordpassword"));
+          System.out.print("landlord name: " + rs.getString("landlordname"));
+          System.out.print("landlord email: " + rs.getString("landlordemail"));
+          System.out.print("landlord age: " + rs.getString("landlordage"));
+          System.out.print("landlord phone: " + rs.getString("landlordphoneno"));
+          System.out.print("landlord gender: " + rs.getString("landlordgender"));
+      }
+      %>
 
         <div class="container">
           <h3>MY PROFILE</h3>
