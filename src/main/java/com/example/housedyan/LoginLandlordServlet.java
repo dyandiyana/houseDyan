@@ -67,7 +67,7 @@ public class LoginLandlordServlet extends HttpServlet {
             }
 
         }catch(Exception e){
-            out.println(e);
+            e.printStackTrace();
         }
 
     }
