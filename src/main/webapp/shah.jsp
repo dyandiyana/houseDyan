@@ -74,7 +74,7 @@
 
 
                     <td class="text-center">
-                        <a href='Edit.jsp?u=<%=res.getString("landlordid")%>' class="btn btn-success">Update</a>
+                        <a href='Edit.jsp?u=<%=res.getString("landlordid")%>' class="btn btn-success">Updatee</a>
                         <a href='Delete.jsp?d=<%=res.getString("landlordid")%>' class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
