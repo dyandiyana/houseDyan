@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %><%--
   Created by IntelliJ IDEA.
   User: wala wala
   Date: 1/2/2022
@@ -16,11 +19,34 @@
 </head>
 
 <body>
-<jsp:include page="/ReadLandlordProfileServlet"/>
+      <%
+            Class.forName("org.postgresql.Driver"); // ni stay
+            String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
+            String user = "nhydysucefvvzn"; //ni user dri heroku database
+            String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
 
-<div class="navbar">
-</div>
+            Connection conn = null;
+            Statement stat = null;
+            ResultSet rs = null;
+            Class.forName("org.postgresql.Driver");
+            conn= DriverManager.getConnection(dbURL, user, pass);
+            stat = conn.createStatement();
+            String data = "select * from landlord order by landlordid";
+            rs = stat.executeQuery(data);
 
+      while (rs.next())
+      %>
+      {
+      System.out.print("Landlord Idd2: " + rs.getString("landlordid"));
+      System.out.print("Username: " + rs.getString("landlordusername"));
+      System.out.print("landlord password :" + rs.getString("landlordpassword"));
+      System.out.print("landlord name: " + rs.getString("landlordname"));
+      System.out.print("landlord email: " + rs.getString("landlordemail"));
+      System.out.print("landlord age: " + rs.getString("landlordage"));
+      System.out.print("landlord phone: " + rs.getString("landlordphoneno"));
+      System.out.print("landlord gender: " + rs.getString("landlordgender"));
+
+      }
 <div class="container">
   <h3>MY PROFILE</h3>
   <div class="row">
@@ -28,7 +54,7 @@
       <label>USERNAME</label>
     </div>
     <div class="col-75">
-      <label></label>
+      <label><%=rs.getString("landlordUsername")%></label>
     </div>
   </div>
   <div class="row">
