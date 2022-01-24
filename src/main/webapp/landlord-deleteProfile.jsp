@@ -17,8 +17,10 @@
         String landlordusername = request.getParameter("landlordusername");
         System.out.println(landlordusername);
 
+
         try
         {
+
             Class.forName("org.postgresql.Driver"); // ni stay
             String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
             String user = "nhydysucefvvzn";
@@ -26,7 +28,7 @@
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             Statement stmt = conn.createStatement();
-            String sql = "delete from landlord where landlordusername=" + landlordusername;
+            String sql = "delete from landlord where landlordusername='"+landlordusername+"'";
             stmt.execute(sql);
 
             out.println("Your Requested Data Is Deleted");
