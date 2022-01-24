@@ -12,6 +12,7 @@
     <body>
     <%
         String landlordid = request.getParameter("landlordid");
+        System.out.println(landlordid);
 
         try
         {
