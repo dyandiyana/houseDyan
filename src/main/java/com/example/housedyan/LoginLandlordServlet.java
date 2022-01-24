@@ -23,7 +23,7 @@ public class LoginLandlordServlet extends HttpServlet {
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
 
-            int lId = Integer.parseInt(request.getParameter("landlordid"));
+
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
 
@@ -49,7 +49,7 @@ public class LoginLandlordServlet extends HttpServlet {
                 while (res.next()){
                     if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
                     {
-                        session.setAttribute("landlordid",res.getInt(1));
+                        session.setAttribute("landlordid",res.getString(1));
                         session.setAttribute("landlordusername",res.getString(2));
                         session.setAttribute("landlordpassword",res.getString(3));
                         session.setAttribute("landlordname",res.getString(4));
