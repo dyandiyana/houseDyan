@@ -33,7 +33,7 @@ public class LoginLandlordServlet extends HttpServlet {
             String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT landlordUsername,landlordPassword,landlordemail from landlord ";
+            String sql  ="SELECT landlordid,landlordUsername,landlordPassword,landlordemail from landlord ";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -49,7 +49,8 @@ public class LoginLandlordServlet extends HttpServlet {
                     if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
                     {
                         out.println("BERJAYA!!!");
-                        response.sendRedirect("try.jsp");
+                        //response.sendRedirect("try.jsp");
+                        out.println("<p>" + "ID: "+ res.getString("landlordid") + "</p>");
 
                     }else{
                         out.println("HAHAHAHHA SALAH ");
