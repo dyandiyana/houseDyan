@@ -1,6 +1,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+
 <%
     String id = request.getParameter("landlordid");
 
@@ -11,7 +12,7 @@
     Connection conn = DriverManager.getConnection(dbURL,user,pass);
 
     Statement stat = conn.createStatement();
-    stat.executeUpdate("delete * from  landlord where landlordid='1'");
+    stat.executeUpdate("delete * from  landlord where landlordid='"+id+"'");
 
     response.sendRedirect("index.jsp");
 %>
