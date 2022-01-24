@@ -48,9 +48,7 @@ public class LoginLandlordServlet extends HttpServlet {
                 while (res.next()){
                     if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
                     {
-                        out.println("BERJAYA!!!");
-                        //response.sendRedirect("try.jsp");
-                        out.println("<p>" + "ID: "+ res.getString("landlordid") + "</p>");
+                        response.sendRedirect("landlord-home.jsp");
 
                     }else{
                         out.println("HAHAHAHHA SALAH ");
