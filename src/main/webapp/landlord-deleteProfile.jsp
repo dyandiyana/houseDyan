@@ -13,7 +13,6 @@
 
 
     <%
-        int landlordid = Integer.parseInt(request.getParameter("landlordid"));
         String landlordid = request.getParameter("landlordid");
         System.out.println(landlordid);
 
