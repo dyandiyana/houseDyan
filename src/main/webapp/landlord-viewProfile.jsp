@@ -16,6 +16,8 @@
 </head>
 
 <body>
+<jsp:include page="/ReadLandlordProfileServlet"/>
+
 <div class="navbar">
 </div>
 
@@ -88,6 +90,7 @@
   <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="#">DELETE</a></button>
 
 
-</div>
+</div
+
 </body>
 </html>

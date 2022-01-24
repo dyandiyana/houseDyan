@@ -28,6 +28,7 @@ public class ReadLandlordProfileServlet extends HttpServlet
         String lPhoneNo = request.getParameter("landlordPhoneNo");
         String lGender = request.getParameter("landlordGender");
 
+
         out.println("<html><body>");
 
         try
@@ -67,7 +68,7 @@ public class ReadLandlordProfileServlet extends HttpServlet
 
                 while (rs.next())
                 {
-                    System.out.print("Landlord Idd: " + rs.getString("landlordid"));
+                    System.out.print("Landlord Idd2: " + rs.getString("landlordid"));
                     System.out.print("Username: " + rs.getString("landlordusername"));
                     System.out.print("landlord password :" + rs.getString("landlordpassword"));
                     System.out.print("landlord name: " + rs.getString("landlordname"));
