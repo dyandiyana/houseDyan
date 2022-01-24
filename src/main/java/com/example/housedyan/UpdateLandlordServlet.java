@@ -29,6 +29,7 @@ public class UpdateLandlordServlet extends HttpServlet {
         String lPhoneNo = request.getParameter("landlordPhoneNo");
         String lGender = request.getParameter("landlordGender");
         CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
+        out.println(landlord.getLandlordId());
 
         int row = 1;
 
