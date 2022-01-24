@@ -28,7 +28,7 @@
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             Statement stmt = conn.createStatement();
-            String sql = "delete from landlord where landlordusername=" + landlordusername;
+            String sql = "delete * from landlord where landlordusername=" + landlordusername;
             stmt.execute(sql);
 
             out.println("Your Requested Data Is Deleted");
