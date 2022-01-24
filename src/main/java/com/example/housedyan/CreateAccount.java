@@ -1,5 +1,8 @@
 package com.example.housedyan;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 public class CreateAccount {
 
 
@@ -90,4 +93,5 @@ public class CreateAccount {
     public void setLandlordGender(String landlordGender) {
         this.landlordGender = landlordGender;
     }
+
 }
