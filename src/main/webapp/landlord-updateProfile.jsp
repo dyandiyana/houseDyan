@@ -39,10 +39,11 @@
 
 %>
 
-<form action="" method="POST">
+<form action="UpdateLandlordServlet" method="POST">
     <%
         Statement stat = conn.createStatement();
-        int lId = Integer.parseInt(request.getParameter("landlordid"));
+        int lId;
+        lId = Integer.parseInt(request.getParameter("landlordid"));
         String data = "select * from landlord where landlordid='"+lId+"'";
         ResultSet res = stat.executeQuery(data);
         while(res.next()){
@@ -117,27 +118,3 @@
 </form>
 </body>
 </html>
-<%
-    int landID = Integer.parseInt(request.getParameter("landlordid"));
-    String a = request.getParameter("landlordusername");
-    String b = request.getParameter("landlordpassword");
-    String c = request.getParameter("landlordname");
-    String d = request.getParameter("landlordemail");
-    String e = request.getParameter("landlordage");
-    String f = request.getParameter("landlordphoneno");
-    String g = request.getParameter("landlordgender");
-    if(a!=null && b!=null && c!=null && d!=null && e!=null && f!=null && g!=null){
-        String query = "update landlord set landlordusername=?,landlordpassword=?,landlordname=?, landlordemail=?, landlordage=? , landlordphoneno=?,landlordgender=? where landlordid='"+landID+"'";
-        PreparedStatement stmt = conn.prepareStatement(query);
-        stmt.setString(1,a);
-        stmt.setString(2,b);
-        stmt.setString(3,c);
-        stmt.setString(4,d);
-        stmt.setString(5,e);
-        stmt.setString(6,f);
-        stmt.setString(7,g);
-
-        stmt.executeUpdate();
-        response.sendRedirect("index.jsp");
-    }
-%>
