@@ -23,7 +23,7 @@ public class LoginLandlordServlet extends HttpServlet {
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
 
-
+            int lId = Integer.parseInt(request.getParameter("landlordid"));
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
 
@@ -33,7 +33,7 @@ public class LoginLandlordServlet extends HttpServlet {
             String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT * from landlord where landlord=? ";
+            String sql  ="SELECT * from landlord where landlord='"+lId+"'";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
