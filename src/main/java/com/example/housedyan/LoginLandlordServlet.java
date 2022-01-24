@@ -46,11 +46,13 @@ public class LoginLandlordServlet extends HttpServlet {
                 ResultSet res = statement.executeQuery(sql);
 
                 while (res.next()){
-                    if(lUsername.equals(res.getString("landlordusername"))&&lPassword.equals(res.getString("landlordpassword")))
+                    if(lUsername.equals(res.getString("landlordusername")) != lPassword.equals(res.getString("landlordpassword")))
                     {
+                        out.println("HAHAHAHHA SALAH ");
+
+                    }else{
                         out.println("BERJAYA!!!");
                         response.sendRedirect("try.jsp");
-
                     }
                 }
             }
