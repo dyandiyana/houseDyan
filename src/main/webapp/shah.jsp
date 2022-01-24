@@ -66,7 +66,7 @@
                     Class.forName(DB_DRIVER);
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
-                    String data = "select * from landlord order by landlordid";
+                    String data = "select * from landlord where landlordid=?";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
