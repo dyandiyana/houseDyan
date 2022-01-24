@@ -2,7 +2,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%
-    String id = request.getParameter("d");
+    String id = request.getParameter("id");
 
     String DB_DRIVER = "org.postgresql.Driver";
     String DB_HOST = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
@@ -13,6 +13,7 @@
     Connection conn = DriverManager.getConnection(DB_HOST,DB_USER,DB_PASSWORD);
     Statement stat = conn.createStatement();
     stat.executeUpdate("delete from landlord where landlordid='"+id+"'");
+
     response.sendRedirect("index.jsp");
 %>
 
