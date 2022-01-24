@@ -30,7 +30,7 @@ public class UpdateLandlordServlet extends HttpServlet {
         String lGender = request.getParameter("landlordGender");
         CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
 
-        int row = 0;
+        int row = 1;
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
