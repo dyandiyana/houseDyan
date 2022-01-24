@@ -64,27 +64,29 @@ public class UpdateLandlordServlet extends HttpServlet {
             st.setInt(8,landlord.getLandlordId());
             row= st.executeUpdate();//return no of row effected
 
+            if(row>0){
+                out.println("Record update insertedd");
+
+                request.setAttribute("id", landlord.getLandlordId() );
+                request.setAttribute("username", landlord.getLandlordUsername() );
+                request.setAttribute("password", landlord.getLandlordPassword() );
+                request.setAttribute("name", landlord.getLandlordName() );
+                request.setAttribute("email", landlord.getLandlordEmail() );
+                request.setAttribute("age", landlord.getLandlordAge() );
+                request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
+                request.setAttribute("gender", landlord.getLandlordGender() );
+                response.sendRedirect("landlord-viewProfile.jsp");
+            }else{
+                out.println("Record failed");
+            }
+
 
 
         }catch(Exception e){
             e.printStackTrace();
         }
 
-        if(row>0){
-            out.println("Record update insertedd");
 
-            request.setAttribute("id", landlord.getLandlordId() );
-            request.setAttribute("username", landlord.getLandlordUsername() );
-            request.setAttribute("password", landlord.getLandlordPassword() );
-            request.setAttribute("name", landlord.getLandlordName() );
-            request.setAttribute("email", landlord.getLandlordEmail() );
-            request.setAttribute("age", landlord.getLandlordAge() );
-            request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
-            request.setAttribute("gender", landlord.getLandlordGender() );
-            response.sendRedirect("landlord-viewProfile.jsp");
-        }else{
-            out.println("Record failed");
-        }
 
     }
 }
