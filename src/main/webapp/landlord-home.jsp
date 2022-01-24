@@ -20,7 +20,6 @@ WELCOME !!!!! ${landlordusername}<br><br>
 <a href="landlord-updateProfile.jsp">update profile</a>
 <a href="landlord-viewProfile.jsp">read profile</a>
 <a href="landlord-deleteProfile.jsp">delete profile</a>
-<a href="DeleteLandlordProfileServlet?landlordid=">delete profile</a>
 
 
 
