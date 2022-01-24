@@ -10,7 +10,13 @@
 <head>
     <%@include file="landlord-navbar.html"%>
 </head>
+<%
+    String landlordusername=(String)session.getAttribute("landlordusername")
+%>
 <body>
+
+<%--WELCOME !!!!!! <%=landlordusername%>--%>
+WELCOME !!!!! ${landlordusername}
 <a href="landlord-updateProfile.jsp">update profile</a>
 <a href="shah.jsp">syah update profile</a>
 

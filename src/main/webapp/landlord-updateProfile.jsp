@@ -22,28 +22,9 @@
     </div>
 </div>
 
-<%
-
-
-    Class.forName("org.postgresql.Driver"); // ni stay
-    String dbURL = "jdbc:postgresql://ec2-34-194-171-47.compute-1.amazonaws.com:5432/d6u31lk8tofpbt"; //ni url dri heroku database
-    String user = "nhydysucefvvzn"; //ni user dri heroku database
-    String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
-
-
-    Connection conn = DriverManager.getConnection(dbURL, user, pass);
-
-%>
 
 <form action="UpdateLandlordServlet" method="POST">
-    <%
-        Statement stat = conn.createStatement();
-        int lId;
-        lId = Integer.parseInt(request.getParameter("landlordid"));
-        String data = "select * from landlord where landlordid='"+lId+"'";
-        ResultSet res = stat.executeQuery(data);
-        while(res.next()){
-    %>
+
     <div class="container">
         <h2>UPDATE MY ACCOUNT</h2>
         <div class="row">
@@ -51,7 +32,7 @@
                 <label style="">USERNAME</label>
             </div>
             <div class="col-75">
-                <input type="text" name="Username" placeholder="Enter your username" value="<%=res.getString("landlordusername") %>">
+                <input type="text" name="Username" placeholder="Enter your username" value="${landlordusername}">
             </div>
         </div>
         <div class="row">
@@ -59,7 +40,7 @@
                 <label>PASSWORD</label>
             </div>
             <div class="col-75">
-                <input type="password" name="password" placeholder="Enter your password" value="<%=res.getString("landlordpassword") %>">
+                <input type="password" name="password" placeholder="Enter your password" value="${landlordpassword}">
             </div>
         </div>
         <div class="row">
@@ -67,7 +48,7 @@
                 <label style="">FULL NAME</label>
             </div>
             <div class="col-75">
-                <input type="text" name="FullName" placeholder="Enter your full name" value="<%=res.getString("landlordname") %>">
+                <input type="text" name="FullName" placeholder="Enter your full name" value="${landlordname}">
             </div>
         </div>
         <div class="row">
@@ -75,7 +56,7 @@
                 <label>EMAIL</label>
             </div>
             <div class="col-75">
-                <input type="text" name="email" placeholder="Enter your email" value="<%=res.getString("landlordemail") %>">
+                <input type="text" name="email" placeholder="Enter your email" value="${landlordemail}">
             </div>
         </div>
 
@@ -84,7 +65,7 @@
                 <label style="">AGE</label>
             </div>
             <div class="col-75">
-                <input type="text" name="age" placeholder="Enter your age" value="<%=res.getString("landlordage") %>">
+                <input type="text" name="age" placeholder="Enter your age" value="${landlordage}">
             </div>
         </div>
         <div class="row">
@@ -92,7 +73,7 @@
                 <label style="">PHONE NUMBER</label>
             </div>
             <div class="col-75">
-                <input type="text" name="PhoneNumber" placeholder="Enter your phone number" value="<%=res.getString("landlordphoneno") %>">
+                <input type="text" name="PhoneNumber" placeholder="Enter your phone number" value="${landlordphoneno}">
             </div>
         </div>
         <div class="row">
@@ -100,15 +81,13 @@
                 <label style="">GENDER</label>
             </div>
             <div class="col-75">
-                <input type="radio" id="male" name="Gender" placeholder="Male" value="<%=res.getString("landlordgender") %>">
+                <input type="radio" id="male" name="Gender" placeholder="Male" value="${landlordgender}">
                 <label for="male">MALE</label><br>
-                <input type="radio" id="female" name="Gender" placeholder="Female" value="<%=res.getString("landlordgender") %>">
+                <input type="radio" id="female" name="Gender" placeholder="Female" value="${landlordgender}">
                 <label for="female">FEMALE</label>
             </div>
         </div>
-        <%
-            }
-        %>
+
         <button type="submit" class="button button1" name="submit" >Submit</button><br><br>
     </div>
 </form>

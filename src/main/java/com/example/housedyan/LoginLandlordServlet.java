@@ -42,12 +42,21 @@ public class LoginLandlordServlet extends HttpServlet {
                 System.out.println("Product Name: " + dm.getDatabaseProductName());
                 System.out.println("Product version: " + dm.getDatabaseProductVersion());
 
+                HttpSession session = request.getSession();
                 Statement statement = conn.createStatement();
                 ResultSet res = statement.executeQuery(sql);
 
                 while (res.next()){
                     if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
                     {
+                        session.setAttribute("landlordid",res.getString(1));
+                        session.setAttribute("landlordusername",res.getString(2));
+                        session.setAttribute("landlordpassword",res.getString(3));
+                        session.setAttribute("landlordname",res.getString(4));
+                        session.setAttribute("landlordemail",res.getString(5));
+                        session.setAttribute("landlordage",res.getString(6));
+                        session.setAttribute("landlordphoneno",res.getString(7));
+                        session.setAttribute("landlordgender",res.getString(8));
                         response.sendRedirect("landlord-home.jsp");
 
                     }else{
