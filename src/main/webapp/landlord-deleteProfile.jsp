@@ -25,13 +25,13 @@
             String sql = "delete from landlord where landlordid=" + landlordid;
             stmt.execute(sql);
 
-            System.out.println("Your Requested Data Is Deleted");
+            out.print("Your Requested Data Is Deleted");
             conn.close();
         }
 
         catch (Exception e)
         {
-            System.out.println("Error: " + e.toString());
+            out.println("Error: " + e.toString());
 
         }
 
