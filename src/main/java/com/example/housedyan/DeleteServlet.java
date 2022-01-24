@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name = "com.example.housedyan.DeleteLandlordProfileServlet", value = "/com.example.housedyan.DeleteLandlordProfileServlet")
+@WebServlet(name = "com.example.housedyan.DeleteServlet", value = "/com.example.housedyan.DeleteServlet")
 
-public class DeleteLandlordProfileServlet extends HttpServlet
+public class DeleteServlet extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

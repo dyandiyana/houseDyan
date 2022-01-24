@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<form action="landlord-deleteProfile.jsp" method="post">
+<form action="com.example.housedyan.DeleteServlet" method="post">
 
         <div class="container">
           <h3>MY PROFILE</h3>
