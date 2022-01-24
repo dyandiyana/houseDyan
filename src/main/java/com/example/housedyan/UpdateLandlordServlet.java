@@ -24,7 +24,7 @@ public class UpdateLandlordServlet extends HttpServlet {
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
-            int lId = Integer.parseInt(request.getParameter("landlordid"));
+            int lId= Integer.valueOf(request.getParameter("lId"));
             String lUsername = request.getParameter("landlordUsername");
             String lPassword = request.getParameter("landlordPassword");
             String lName = request.getParameter("landlordName");
@@ -47,7 +47,7 @@ public class UpdateLandlordServlet extends HttpServlet {
 
             st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
-
+            st.setInt(1,lId);
             st.setString(2,lUsername);
             st.setString(3,lPassword);
             st.setString(4,lName);
