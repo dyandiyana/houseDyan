@@ -17,7 +17,6 @@
 
 <body>
 <div class="navbar">
-  <%@include file="landlord-navbar.html"%>
 </div>
 
 <div class="container">
