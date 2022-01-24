@@ -5,9 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 @WebServlet(name = "UpdateLandlordServlet", value = "/UpdateLandlordServlet")
 public class UpdateLandlordServlet extends HttpServlet {
@@ -32,6 +30,7 @@ public class UpdateLandlordServlet extends HttpServlet {
             String lAge = request.getParameter("landlordAge");
             String lPhoneNo = request.getParameter("landlordPhoneNo");
             String lGender = request.getParameter("landlordGender");
+            CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
 
             //nk testing keluar masuk data pastikan xampp, heroku , database connected
 
@@ -44,24 +43,35 @@ public class UpdateLandlordServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
             // klau buat postgress atas2 ni amik yg details dri heroku
 
+
+
             String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=?";
 
             PreparedStatement st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
 
-            st.setString(1,lUsername);
-            st.setString(2,lPassword);
-            st.setString(3,lName);
-            st.setString(4,lEmail);
-            st.setString(5,lAge);
-            st.setString(6,lPhoneNo);
-            st.setString(7,lGender);
-            st.setInt(8,lId);
+            st.setString(1,landlord.getLandlordUsername());
+            st.setString(2,landlord.getLandlordPassword());
+            st.setString(3,landlord.getLandlordName());
+            st.setString(4,landlord.getLandlordEmail());
+            st.setString(5,landlord.getLandlordAge());
+            st.setString(6,landlord.getLandlordPhoneNo());
+            st.setString(7,landlord.getLandlordGender());
+            st.setInt(8,landlord.getLandlordId());
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
                 out.println("Record update insertedd");
-                //response.sendRedirect("landlord-login.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("landlord-viewProfile.jsp");
+                request.setAttribute("id", landlord.getLandlordId() );
+                request.setAttribute("username", landlord.getLandlordUsername() );
+                request.setAttribute("password", landlord.getLandlordPassword() );
+                request.setAttribute("name", landlord.getLandlordName() );
+                request.setAttribute("email", landlord.getLandlordEmail() );
+                request.setAttribute("age", landlord.getLandlordAge() );
+                request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
+                request.setAttribute("gender", landlord.getLandlordGender() );
+                dispatcher.forward(request, response);
             }else{
                 out.println("Record failed");
             }
