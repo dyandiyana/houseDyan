@@ -49,7 +49,7 @@ public class LoginLandlordServlet extends HttpServlet {
                 while (res.next()){
                     if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
                     {
-                        session.setAttribute("landlordid",res.getString(1));
+
                         session.setAttribute("landlordusername",res.getString(2));
                         session.setAttribute("landlordpassword",res.getString(3));
                         session.setAttribute("landlordname",res.getString(4));
