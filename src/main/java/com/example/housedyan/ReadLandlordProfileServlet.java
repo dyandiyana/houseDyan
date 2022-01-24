@@ -28,6 +28,7 @@ public class ReadLandlordProfileServlet extends HttpServlet
         String lPhoneNo = request.getParameter("landlordPhoneNo");
         String lGender = request.getParameter("landlordGender");
 
+
         out.println("<html><body>");
 
         try

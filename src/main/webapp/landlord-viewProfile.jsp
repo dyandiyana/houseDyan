@@ -88,6 +88,8 @@
   <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="#">DELETE</a></button>
 
 
-</div>
+</div
+<jsp:include page="/ReadLandlordProfileServlet"/>
+
 </body>
 </html>
