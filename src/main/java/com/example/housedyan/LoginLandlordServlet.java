@@ -33,7 +33,7 @@ public class LoginLandlordServlet extends HttpServlet {
             String pass = "d91c6a95779ab44ec2939ae0225389a20d7129541e10791714dbf4f165e0d078"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="select landlordid,landlordUsername,landlordPassword,landlordemail from landlord where landlordid='"+lUsername+"'";
+            String sql  ="SELECT landlordid,landlordUsername,landlordPassword,landlordemail from landlord ";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -45,17 +45,17 @@ public class LoginLandlordServlet extends HttpServlet {
                 Statement statement = conn.createStatement();
                 ResultSet res = statement.executeQuery(sql);
 
-                while (res.next()) {
-                    if (lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword"))) {
+                while (res.next()){
+                    if(lUsername.equals(res.getString("landlordusername")) && lPassword.equals(res.getString("landlordpassword")))
+                    {
                         out.println("BERJAYA!!!");
                         //response.sendRedirect("try.jsp");
-                        out.println("<p>" + "ID: " + res.getString("landlordid") + "</p>");
+                        out.println("<p>" + "ID: "+ res.getString("landlordid") + "</p>");
 
-                    } else {
+                    }else{
                         out.println("HAHAHAHHA SALAH ");
                     }
                 }
-
             }
 
         }catch(Exception e){
