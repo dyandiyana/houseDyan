@@ -10,8 +10,10 @@
     </head>
 
     <body>
+
+
     <%
-        String landlordid = request.getParameter("landlordid");
+        int landlordid = Integer.parseInt(request.getParameter("landlordid"));
         System.out.println(landlordid);
 
         try
