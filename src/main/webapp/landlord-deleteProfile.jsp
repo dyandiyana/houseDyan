@@ -11,7 +11,7 @@
     Connection conn = DriverManager.getConnection(dbURL,user,pass);
 
     Statement stat = conn.createStatement();
-    stat.executeUpdate("delete from landlord where landlordid='"+id+"'");
+    stat.executeUpdate("delete * from  landlord where landlordid='1'");
 
     response.sendRedirect("index.jsp");
 %>
