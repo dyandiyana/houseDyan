@@ -34,7 +34,7 @@ public class DeleteServlet extends HttpServlet
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             Statement stmt = conn.createStatement();
-            PreparedStatement pst = conn.prepareStatement("delete from landlord where landlordid=2");
+            PreparedStatement pst = conn.prepareStatement("delete * from landlord where landlordid=2");
             //pst.setInt(1,landlordid);
             ResultSet rs= pst.executeQuery();
 
