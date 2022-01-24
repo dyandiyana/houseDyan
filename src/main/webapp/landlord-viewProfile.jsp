@@ -30,14 +30,6 @@
               <label>${landlordusername}</label>
             </div>
           </div>
-          <div class="row">
-            <div class="col-25">
-              <label>PASSWORD</label>
-            </div>
-            <div class="col-75">
-              <label>${landlordpassword}</label>
-            </div>
-          </div>
 
           <div class="row">
             <div class="col-25">
