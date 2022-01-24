@@ -11,7 +11,7 @@
     <%@include file="landlord-navbar.html"%>
 </head>
 <%
-    String landlordusername=(String)session.getAttribute("landlordusername")
+    String landlordusername=(String)session.getAttribute("landlordusername");
 %>
 <body>
 
