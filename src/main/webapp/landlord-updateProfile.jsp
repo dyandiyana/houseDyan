@@ -46,7 +46,7 @@
 <form action="" method="POST">
     <%
         stat = conn.createStatement();
-        Integer lId = Integer.parseInt(request.getParameter("landlordid"));
+        int lId = Integer.parseInt(request.getParameter("landlordid"));
         String data = "select * from landlord where landlordid='"+lId+"'";
         res = stat.executeQuery(data);
         while(res.next()){
