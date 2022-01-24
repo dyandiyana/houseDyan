@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-          <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="com.example.housedyan.DeleteServlet">DELETE</a></button>
+          <button type="submit" class="button button1" name="submit" onclick="document.getElementById('id01').style.display='block'"><a href="DeleteLandlordServlet">DELETE</a></button>
           <button type="submit" onclick="myFunction(); return false" class="button button1" name="submit" ><a href="landlord-updateProfile.jsp">UPDATE</a></button>
 
 
