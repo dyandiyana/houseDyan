@@ -62,7 +62,7 @@ public class ReadLandlordProfileServlet extends HttpServlet
 
                 Statement statement = null;
                 ResultSet rs = null;
-                String data = "select * from  landlord";
+                String data = "select * from  landlord where landlordid='1'";
                 statement = conn.createStatement();
                 rs = statement.executeQuery(data);
 
