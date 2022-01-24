@@ -15,5 +15,9 @@
 <a href="landlord-login.jsp">LOGIN PROFILEE</a>
 <a href="/ReadLandlordProfileServlet">READ PROFILEE</a>
 
+<br>
+<a href="shah.jsp">tesh shah punyaa</a>
+
+
 </body>
 </html>
