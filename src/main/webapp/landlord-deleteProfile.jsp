@@ -14,10 +14,7 @@
 
 
     <%
-        HttpSession session1 = request.getSession();
-        PrintWriter out1 = response.getWriter();
         String landlordusername = request.getParameter("landlordusername");
-        int id = Integer.parseInt(session1.getAttribute("landlordid").toString());
         System.out.println(landlordusername);
 
 
@@ -31,22 +28,16 @@
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             Statement stmt = conn.createStatement();
-            String sql = "delete from landlord where landlordid=?";
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setInt(1,id);
+            String sql = "delete from landlord where landlordusername='dee'";
             stmt.execute(sql);
-            int row= st.executeUpdate();
 
-            if(row>0){
-                out1.println("Your Requested Data Is Deleted");
-            }else{
-                out1.println("Your Requested Data Is not Deleted");
-            }
-
+            out.println("Your Requested Data Is Deleted");
             conn.close();
-        }catch (Exception e)
+        }
+
+        catch (Exception e)
         {
-            out1.println("Error: " + e.toString());
+            out.println("Error: " + e.toString());
 
         }
 
