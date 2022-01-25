@@ -12,6 +12,7 @@ public class UpdateLandlordServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
     }
 
     @Override
@@ -28,10 +29,6 @@ public class UpdateLandlordServlet extends HttpServlet {
         String lAge = request.getParameter("landlordage");
         String lPhoneNo = request.getParameter("landlordPhoneNo");
         String lGender = request.getParameter("landlordgender");
-        CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
-        out.println(landlord.getLandlordId());
-
-
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
@@ -56,27 +53,20 @@ public class UpdateLandlordServlet extends HttpServlet {
             PreparedStatement st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
 
-            st.setString(1,landlord.getLandlordUsername());
-            st.setString(2,landlord.getLandlordPassword());
-            st.setString(3,landlord.getLandlordName());
-            st.setString(4,landlord.getLandlordEmail());
-            st.setString(5,landlord.getLandlordAge());
-            st.setString(6,landlord.getLandlordPhoneNo());
-            st.setString(7,landlord.getLandlordGender());
-            st.setInt(8,landlord.getLandlordId());
+            st.setString(1,lUsername);
+            st.setString(2,lPassword);
+            st.setString(3,lName);
+            st.setString(4,lEmail);
+            st.setString(5,lAge);
+            st.setString(6,lPhoneNo);
+            st.setString(7,lGender);
+            st.setInt(8,lId);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
                 out.println("Record update insertedd");
 
-                request.setAttribute("landlordid", landlord.getLandlordId() );
-                request.setAttribute("landlordusername", landlord.getLandlordUsername() );
-                request.setAttribute("landlordpassword", landlord.getLandlordPassword() );
-                request.setAttribute("landlordname", landlord.getLandlordName() );
-                request.setAttribute("landlordemail", landlord.getLandlordEmail() );
-                request.setAttribute("landlordage", landlord.getLandlordAge() );
-                request.setAttribute("landlordphonenumber", landlord.getLandlordPhoneNo() );
-                request.setAttribute("landlordgender", landlord.getLandlordGender() );
+
                 response.sendRedirect("landlord-viewProfile.jsp");
             }else{
                 out.println("Record failed");
