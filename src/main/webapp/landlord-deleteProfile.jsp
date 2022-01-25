@@ -15,6 +15,7 @@
 
     <%
         HttpSession session1 = request.getSession();
+        PrintWriter out1 = response.getWriter();
         String landlordusername = request.getParameter("landlordusername");
         int id = Integer.parseInt(session1.getAttribute("landlordid").toString());
         System.out.println(landlordusername);
@@ -37,15 +38,15 @@
             int row= st.executeUpdate();
 
             if(row>0){
-                out.println("Your Requested Data Is Deleted");
+                out1.println("Your Requested Data Is Deleted");
             }else{
-                out.println("Your Requested Data Is not Deleted");
+                out1.println("Your Requested Data Is not Deleted");
             }
 
             conn.close();
         }catch (Exception e)
         {
-            out.println("Error: " + e.toString());
+            out1.println("Error: " + e.toString());
 
         }
 
