@@ -12,7 +12,6 @@ public class UpdateLandlordServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
     }
 
     @Override
@@ -66,7 +65,14 @@ public class UpdateLandlordServlet extends HttpServlet {
             if(row>0){
                 out.println("Record update insertedd");
 
-
+                request.setAttribute("landlordid",lId);
+                request.setAttribute("landlordusername",lUsername );
+                request.setAttribute("landlordpassword", lPassword);
+                request.setAttribute("landlordname", lName);
+                request.setAttribute("landlordemail", lEmail);
+                request.setAttribute("landlordage", lAge);
+                request.setAttribute("landlordphonenumber", lPhoneNo);
+                request.setAttribute("landlordgender",lGender);
                 response.sendRedirect("landlord-viewProfile.jsp");
             }else{
                 out.println("Record failed");

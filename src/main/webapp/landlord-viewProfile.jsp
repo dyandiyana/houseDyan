@@ -31,7 +31,7 @@
               <label>USERNAME</label>
             </div>
             <div class="col-75">
-              <label>${landlordusername}</label>
+              <label><%= request.getAttribute("landlordusername")%></label>
             </div>
           </div>
 
