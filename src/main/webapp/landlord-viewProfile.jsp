@@ -31,7 +31,7 @@
               <label>USERNAME</label>
             </div>
             <div class="col-75">
-              <label><%= request.getAttribute("landlordusername")%></label>
+              <label><%= (String)request.getAttribute("landlordusername")%></label>
             </div>
           </div>
 
