@@ -69,7 +69,7 @@
               <label>PHONE NUMBER</label>
             </div>
             <div class="col-75">
-              <label>${landlordphoneno}</label>
+              <label>${landlordphonenumber}</label>
             </div>
           </div>
             <div class="row">

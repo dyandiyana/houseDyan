@@ -69,14 +69,14 @@ public class UpdateLandlordServlet extends HttpServlet {
             if(row>0){
                 out.println("Record update insertedd");
 
-                request.setAttribute("id", landlord.getLandlordId() );
-                request.setAttribute("username", landlord.getLandlordUsername() );
-                request.setAttribute("password", landlord.getLandlordPassword() );
-                request.setAttribute("name", landlord.getLandlordName() );
-                request.setAttribute("email", landlord.getLandlordEmail() );
-                request.setAttribute("age", landlord.getLandlordAge() );
-                request.setAttribute("phonenumber", landlord.getLandlordPhoneNo() );
-                request.setAttribute("gender", landlord.getLandlordGender() );
+                request.setAttribute("landlordid", landlord.getLandlordId() );
+                request.setAttribute("landlordusername", landlord.getLandlordUsername() );
+                request.setAttribute("landlordpassword", landlord.getLandlordPassword() );
+                request.setAttribute("landlordname", landlord.getLandlordName() );
+                request.setAttribute("landlordemail", landlord.getLandlordEmail() );
+                request.setAttribute("landlordage", landlord.getLandlordAge() );
+                request.setAttribute("landlordphonenumber", landlord.getLandlordPhoneNo() );
+                request.setAttribute("landlordgender", landlord.getLandlordGender() );
                 response.sendRedirect("landlord-viewProfile.jsp");
             }else{
                 out.println("Record failed");
