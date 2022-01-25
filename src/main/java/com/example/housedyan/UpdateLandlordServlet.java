@@ -21,17 +21,17 @@ public class UpdateLandlordServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         int lId= Integer.parseInt(request.getParameter("landlordid"));
-        String lUsername = request.getParameter("landlordUsername");
-        String lPassword = request.getParameter("landlordPassword");
-        String lName = request.getParameter("landlordName");
-        String lEmail = request.getParameter("landlordEmail");
-        String lAge = request.getParameter("landlordAge");
+        String lUsername = request.getParameter("landlordusername");
+        String lPassword = request.getParameter("landlordpassword");
+        String lName = request.getParameter("landlordname");
+        String lEmail = request.getParameter("landlordemail");
+        String lAge = request.getParameter("landlordage");
         String lPhoneNo = request.getParameter("landlordPhoneNo");
-        String lGender = request.getParameter("landlordGender");
+        String lGender = request.getParameter("landlordgender");
         CreateAccount landlord  = new CreateAccount(lId, lUsername, lPassword, lName, lEmail, lAge, lPhoneNo, lGender );
         out.println(landlord.getLandlordId());
 
-        int row = 1;
+
 
         try{
             //  dlm parameter ni pastikan nama sama dalam form jsp name=""
@@ -50,7 +50,8 @@ public class UpdateLandlordServlet extends HttpServlet {
 
 
 
-            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? where landlordid=?";
+            String query="UPDATE landlord set landlordusername=?,landlordpassword=?,landlordname=?,landlordemail=?,landlordage=?,landlordphoneno=?,landlordgender=? " +
+                    "where landlordid=?";
 
             PreparedStatement st = conn.prepareStatement(query);
             //paramter tu no column dlm table.sdId1 tu dri nama attribute kat String atas tu
@@ -63,7 +64,7 @@ public class UpdateLandlordServlet extends HttpServlet {
             st.setString(6,landlord.getLandlordPhoneNo());
             st.setString(7,landlord.getLandlordGender());
             st.setInt(8,landlord.getLandlordId());
-            row= st.executeUpdate();//return no of row effected
+            int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
                 out.println("Record update insertedd");
