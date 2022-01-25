@@ -73,7 +73,11 @@ public class UpdateLandlordServlet extends HttpServlet {
                 request.setAttribute("landlordage", lAge);
                 request.setAttribute("landlordphonenumber", lPhoneNo);
                 request.setAttribute("landlordgender",lGender);
-                response.sendRedirect("landlord-viewProfile.jsp");
+
+                RequestDispatcher rd = request.getRequestDispatcher("landlord-viewProfile.jsp");
+                rd.forward(request, response);
+
+                /*response.sendRedirect("landlord-viewProfile.jsp");*/
             }else{
                 out.println("Record failed");
             }
