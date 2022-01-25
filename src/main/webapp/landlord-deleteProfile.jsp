@@ -17,7 +17,6 @@
         HttpSession session1 = request.getSession();
         String landlordusername = request.getParameter("landlordusername");
         int id = (Integer) session1.getAttribute("landlordid");
-        int lId= Integer.parseInt(request.getParameter("landlordid"));
         System.out.println(landlordusername);
 
 
