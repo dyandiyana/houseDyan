@@ -24,7 +24,7 @@
         <div class="container">
           <h3>MY PROFILE</h3>
 
-          <input type="number" name="landlordid" hidden>
+          <input type="number" name="landlordid"  value=${landlordid} hidden>
 
           <div class="row">
             <div class="col-25">
@@ -87,5 +87,9 @@
 
         </div>
 </form>
+
+<%
+  request.setAttribute("landlordid", request.getParameter("landlordid"));
+%>
 </body>
 </html>
